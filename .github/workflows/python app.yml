@@ -11,25 +11,25 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out the code
+    - name: Checkout the code
       uses: actions/checkout@v3
 
-    - name: Set up Python
+    - name: Setup Python Environment
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12'  
+        python-version: '3.12'
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
         python -m venv venv
         . venv/bin/activate
-        pip install -r requirements.txt
+        pip install -r requirements.txt   
 
     - name: Run tests
       run: |
-        . venv/bin/activate
+        source venv/bin/activate        
         echo "No tests defined yet."
+
